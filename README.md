@@ -7,7 +7,7 @@ A random generator that provides a beer and two food pairings where you can then
 
 ## Installation
 
-Open your favourite web browser and follow the link: `https://mschuur.github.io//abrewandabite`
+Open your favourite web browser and follow the link: 'https://mschuur.github.io/A-Brew-and-A-Bite/'
 
 ## Screenshot
 
