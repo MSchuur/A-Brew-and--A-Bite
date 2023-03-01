@@ -1,13 +1,13 @@
-/* *{
-    background-color: wheat;
-} */
+header{
+    background-color: wheat
+}
 
-h1 {
+.pageTitle {
     font-family: 'Climate Crisis', cursive;
     text-shadow: 7px 7px 7px lightblue;
  }
 
-button {
+a {
     font-family: 'Climate Crisis', cursive;
 
 }
@@ -15,3 +15,4 @@ button {
 .fa-solid{
     text-shadow: 3px 3px 3px lightblue; 
 }
+
