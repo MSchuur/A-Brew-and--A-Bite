@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Brew & a Bite Just for You!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a15990cd8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+   </head>
+
+  <body>
+
+    <header class="section">
+      <div class="container is-fullwidth">
+        <h1 class=" pageTitle title is-1 has-text-centered">
+          <i class="fa-solid fa-beer-mug-empty "></i> A Brew  & A Bite <i class="fa-solid fa-burger"></i>
+        </h1>
+      </div>
+    </header>
+
+    <div class="container">
+        <h3 class="random-beer">Click to generate🍺</h3>
+        <a href="#" class="button" id="beerBtn">
+          <div class="plate"></div>
+          <div class="plate"></div>
+          <div class="plate"></div>
+          <div class="plate"></div>
+          <div class="plate"></div>
+          <div class="button__wrapper">
+            <span class="button__text">Generate🍺</span>
+          </div>
+          <div class="button__box">
+            <div class="inner inner__top"></div>
+            <div class="inner inner__front"></div>
+            <div class="inner inner__bottom"></div>
+            <div class="inner inner__back"></div>
+            <div class="inner inner__left"></div>
+            <div class="inner inner__right"></div>
+          </div>
+        </a>
+        <p class="description"></p>
+      </div>
+    
+      <div class="beerContainer1">
+        <section id="show-random-beer"></section>
+      </div>
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+     Made with love by: 
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="./assets/js/beerGeneration.js"></script>
+  </body>
+</html>

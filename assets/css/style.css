@@ -7,8 +7,8 @@ header{
     text-shadow: 7px 7px 7px lightblue;
  }
 
-a {
-    font-family: 'Climate Crisis', cursive;
+#buttonFont {
+    font-family: 'Climate Crisis', cursive; 
 
 }
 
