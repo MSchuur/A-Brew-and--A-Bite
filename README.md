@@ -19,6 +19,8 @@ Screenshot of the webapp pages :
 
 CSS library: https://bulma.io/
 
+Icons: https://kit.fontawesome.com/1a15990cd8.js
+
 JS Library: https://jquery.com/
 
 Beer Generator API: https://punkapi.com/
