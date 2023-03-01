@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<link>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <!-- bulma -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css"></link>
+
   <title>A BREW & A BITE</title>
 </head>
 <body>
-  <h1>title</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea architecto hic fugiat nobis sapiente quibusdam tempora saepe culpa consequatur harum.</p>
   
-<!-- generate beer🍺 -->
-  <div class="block">
-    <a href=" " class="button is-primary is-small">Generate Beer</a>
+
+  <div class="container">
+    <h3 class="random-beer">Click to generate🍺</h3>
+    <a href="#" class="button" id="beerBtn">
+      <div class="plate"></div>
+      <div class="plate"></div>
+      <div class="plate"></div>
+      <div class="plate"></div>
+      <div class="plate"></div>
+      <div class="button__wrapper">
+        <span class="button__text">Generate🍺</span>
+      </div>
+      <div class="button__box">
+        <div class="inner inner__top"></div>
+        <div class="inner inner__front"></div>
+        <div class="inner inner__bottom"></div>
+        <div class="inner inner__back"></div>
+        <div class="inner inner__left"></div>
+        <div class="inner inner__right"></div>
+      </div>
+    </a>
+    <p class="description"></p>
+  </div>
+
+  <div class="beerContainer1">
+    <section id="show-random-beer"></section>
   </div>
   
 
-
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="./assets/js/beerGeneration.js"></script>
 </body>
 </html>
