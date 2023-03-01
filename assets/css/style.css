@@ -1,11 +1,17 @@
+/* *{
+    background-color: wheat;
+} */
 
 h1 {
     font-family: 'Climate Crisis', cursive;
-    text-shadow: 5px 5px 5px lightblue;
-    align-items: center;
-}
+    text-shadow: 7px 7px 7px lightblue;
+ }
 
 button {
     font-family: 'Climate Crisis', cursive;
 
+}
+
+.fa-solid{
+    text-shadow: 3px 3px 3px lightblue; 
 }
