@@ -1,0 +1,31 @@
+.foodTitle {
+    text-align: center;
+    margin: 2rem 0rem;
+    border: 2px solid black;
+
+}
+
+.chosenBeer {
+    border: 2px solid black;
+
+}
+
+.chosenBeerImage {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto 1rem auto;
+}
+
+.chosenBeerP {
+    text-align: center;
+
+}
+
+#foodGoBack {
+  margin-top: 1rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
