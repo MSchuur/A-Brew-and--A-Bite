@@ -2,31 +2,30 @@
 var carouselImagesVar = [
     {
         name: "Pale Ale",
-        image: "src",
+        image: "assets/Images/beerBottleForFoodPageHolder.jpg",
       
     },
 
     {
         name: "Sour",
-        image: "src",
+        image: "assets/Images/beerBottleForFoodPageHolder.jpg",
       
     },
 
     {
         name: "Lager",
-        image: "src",
+        image: "assets/Images/beerBottleForFoodPageHolder.jpg",
       
     },
 
     {
         name: "Stout",
-        image: "src",
-      
+        image: "assets/Images/beerBottleForFoodPageHolder.jpg",
     },
 
     {
         name: "IPA",
-        image: "src",
+        image: "assets/Images/beerBottleForFoodPageHolder.jpg",
       
     },
 
@@ -35,11 +34,11 @@ var carouselImagesVar = [
     
     // loops through and creates divs in the html to hold the cards with their images and name
     function generateCarouselDiv(){
-      var carouselImages = ""
+      var carousel = ""
     
       for(var i=0; i < carouselImagesVar.length; i++){
         var imageCard = carouselImagesVar[i]
-        imageCardNew += 
+        carousel += 
         `<section class="section">
             <div class="card" id="carousel">
             <header class="card-header">
@@ -52,7 +51,7 @@ var carouselImagesVar = [
     
       }
     
-      $("#carousel").html(imageCardNew);
+      $("#carousel").html(carousel);
     
     }
     
