@@ -24,6 +24,13 @@
 .pairingSuggestion {
     border: 2px solid black;
     margin: 2rem 0;
+    text-align: center;
+}
+
+.choiceMenu {
+    border: 2px solid black;
+    margin: 2rem 0rem;
+    
 }
 
 #foodGoBack {
@@ -34,4 +41,6 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+
 

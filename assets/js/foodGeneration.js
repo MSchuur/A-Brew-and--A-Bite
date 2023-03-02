@@ -7,6 +7,7 @@ var applicationId = '86631bdd';
 var pairingListEl = document.querySelector('#storedPairing')
 var pairings = ['Jamaican jerk chicken wings', 'Corn dogs', 'Strawberry ice cream sundae']
 var apiUrlName = '';
+var choiceEl = document.querySelector('.choiceMenu')
 
 // Render the food pairing suggestions from the beer generation page that were stored in local storage
 
@@ -52,14 +53,34 @@ function getRecipeSuggestions(choice) {
 };
 
 function displayRecipe(data) {
-    var firstSuggestedRecipeEl = document.querySelector('#firstSuggestion');
-    var firstPhotoUrl = data.hits[0].recipe.image;
-    var firstPhoto = document.createElement('img');
-    firstPhoto.setAttribute('src', firstPhotoUrl);
-    firstPhoto.setAttribute('alt', 'Photo of ' + data.hits[0].recipe.label),
-    firstSuggestedRecipeEl.appendChild('firstPhoto');
+    
+  for (var i = 0; i < 3; i++) {
 
-    console.log(firstPhotoUrl);
+    
+  var recipeChoiceEl = document.querySelector('#choicesCard');
+    var newCard = document.createElement('div');
+    newCard.classList = 'column is-one-third';
+    recipeChoiceEl.appendChild(newCard);
+
+
+    var recipeTitle = document.createElement('p');
+    recipeTitle.classList.add('title', 'is-3', 'mb-3');
+    recipeTitle = data.hits[i].recipe.label;
+    console.log(recipeTitle);
+    
+    var recipePhotoUrl = data.hits[i].recipe.image;
+    
+    
+    
+    var recipePhoto = document.createElement('img');
+    recipePhoto.setAttribute('src', recipePhotoUrl);
+    
+    recipePhoto.setAttribute('alt', 'Photo of ' + data.hits[0].recipe.label);
+    newCard.append(recipeTitle);
+    newCard.append(recipePhoto);
+
+  }
+    
 }
     
 

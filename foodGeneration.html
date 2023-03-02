@@ -21,24 +21,25 @@
         <div class="chosenBeer">
             <img class="image 128x128 chosenBeerImage" src="./assets/Images/beerBottleForFoodPageHolder.jpg" alt="Beer Bottles as a placeholder till I can import image from the beer generation page">
             <p class="title is-5 chosenBeerP">This is the beer that you have chosen</p>
-            <p class="title is-5 chosenBeerP">If You wish to chose diffenent beer click the Go Back Button</p>
+            <p class="title is-5 chosenBeerP">If You wish to choose a different beer click the Go Back Button</p>
             <a class="button is-centered is-rounded is-link is-hovered is-focused  goBack-btn" id="foodGoBack" href="">Go Back To Beer Choice</a>
         </div>
     </section>
 
-    <section class="container mt-6 " id="suggestedRecipe">
-        <div class="columns is-one-quarter title is-4 pairingSuggestion">
-            <h3 class="is-3 mb-5" >Recommended Pairings
+    <section class="container columns mt-3 " id="suggestedRecipe">
+        <div class="column is-half is-offset-one-third  pairingSuggestion">
+            <h3 class="mb-5 title is-3">Recommended Pairings
                 <ul id="storedPairing"></ul>
             </h3>
-        <div class="is-one-quarter" id="firstSuggestion"></div>
-        <div class="is-one-quarter" id="secondSuggestion"></div>
-        <div class="is-one-quarter" id="thirdSuggestion"></div>    
         </div>
+    </section>
+    <section class="mx-2 container columns  choiceMenu">
+        <div class=" mx-5 columns is-two-third" id="choicesCard"></div>      
+    </section>    
             
 
 
-    </section>
+    
     <script src="./assets/js/foodGeneration.js"></script>
 </body>
 </html>
