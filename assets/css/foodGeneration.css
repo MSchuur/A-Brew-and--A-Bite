@@ -21,6 +21,11 @@
 
 }
 
+.pairingSuggestion {
+    border: 2px solid black;
+    margin: 2rem 0;
+}
+
 #foodGoBack {
   margin-top: 1rem;
   position: relative;
@@ -29,3 +34,4 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
