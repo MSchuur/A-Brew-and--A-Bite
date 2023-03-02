@@ -5,27 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://kit.fontawesome.com/1a15990cd8.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1a15990cd8.js"></script>
     <link rel="stylesheet" href="./assets/css/foodGeneration.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Pick a Delicious Food</title>
 </head>
 <body>
-    <header>
-        <h1 class="title is-1 foodTitle">Pick a Delicious Food</h1>
+    <header class="container is-flex is-flex-direction-row is-justify-content-center my-5">
+        <h1 class=" pageTitle title is-1 foodTitle">Pick a Delicious Food</h1>
     </header>
-    <section class="">
+    <section class="container">
         <div class="chosenBeer">
             <img class="image 128x128 chosenBeerImage" src="./assets/Images/beerBottleForFoodPageHolder.jpg" alt="Beer Bottles as a placeholder till I can import image from the beer generation page">
-            <p class="title is-4 chosenBeerP">This is the beer that you have chosen</p>
-            <p class="title is-4 chosenBeerP">If You wish to chose diffenent beer click the Go Back Button</p>
+            <p class="title is-5 chosenBeerP">This is the beer that you have chosen</p>
+            <p class="title is-5 chosenBeerP">If You wish to choose a different beer click the Go Back Button</p>
             <a class="button is-centered is-rounded is-link is-hovered is-focused  goBack-btn" id="foodGoBack" href="">Go Back To Beer Choice</a>
         </div>
-        <!-- <a class="button is-centered is-rounded is-link is-hovered is-focused  goBack-btn" id="foodGoBack" href="">Go Back To Beer Choice</a> -->
-
     </section>
+
+    <section class="container columns mt-3 " id="suggestedRecipe">
+        <div class="column is-half is-offset-one-third  pairingSuggestion">
+            <h3 class="mb-5 title is-3">Recommended Pairings
+                <ul id="storedPairing"></ul>
+            </h3>
+        </div>
+    </section>
+    <section class="mx-2 container columns  choiceMenu">
+        <div class=" mx-5 columns is-two-third" id="choicesCard"></div>      
+    </section>    
+            
+
+
+    
+    <script src="./assets/js/foodGeneration.js"></script>
 </body>
 </html>
