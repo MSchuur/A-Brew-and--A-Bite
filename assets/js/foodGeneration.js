@@ -8,6 +8,7 @@ var pairingListEl = document.querySelector('#storedPairing')
 var pairings = ['Jamaican jerk chicken wings', 'Corn dogs', 'Strawberry ice cream sundae']
 var apiUrlName = '';
 var choiceEl = document.querySelector('.choiceMenu')
+var goBackBtnEl = document.querySelector('#foodGoBack');
 
 // Render the food pairing suggestions from the beer generation page that were stored in local storage
 
@@ -20,6 +21,30 @@ function renderPairing() {
         pairingEl.innerText = pairings[i];
         pairingListEl.appendChild(pairingEl);
     }
+}
+
+// Store the chosen recipe into local storage to be used on the recipe generation page
+
+function storeRecipeName(recipeLabel) {
+  var recipeLabels = JSON.parse(localStorage.getItem('dish')) || [];
+   console.log(recipeLabel);
+  for (var i = 0; i < recipeLabels.length; i ++ ) {
+      if (recipeLabels[i] === recipeLabel) {
+          return
+      }
+  }
+  if (recipeLabels.length >= 5){
+      recipeLabels.shift();
+  }
+  recipeLabels.push(recipeLabel);
+  localStorage.setItem('dish', JSON.stringify(recipeLabels));
+  
+  
+  
+  
+  
+  
+  
 }
 
 // Generate and display the 3 top recipe suggestions form the pairing button
@@ -66,50 +91,37 @@ function displayRecipe(data) {
     var recipeTitle = document.createElement('p');
     recipeTitle.classList.add('title', 'is-3', 'mb-3');
     recipeTitle = data.hits[i].recipe.label;
-    console.log(recipeTitle);
-    
+        
     var recipePhotoUrl = data.hits[i].recipe.image;
-    
-    
-    
     var recipePhoto = document.createElement('img');
     recipePhoto.setAttribute('src', recipePhotoUrl);
-    
-    recipePhoto.setAttribute('alt', 'Photo of ' + data.hits[0].recipe.label);
+    recipePhoto.setAttribute('alt', 'Photo of ' + data.hits[i].recipe.label);
+
+    var recipeBtn = document.createElement('button');
+    recipeBtn.classList.add('button', 'is-rounded', 'is-link', 'is-hovered', 'is-focused');
+    recipeBtn.innerText = recipeTitle;
+
+
     newCard.append(recipeTitle);
     newCard.append(recipePhoto);
+    newCard.append(recipeBtn);
 
   }
     
 }
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 renderPairing(pairings);
 
 pairingListEl.addEventListener('click', function(event) {
-    
-    var element =event.target;
+    var element = event.target;
     element = element.innerHTML;
-   
-    // forecastWeatherEl.innerHTML = '';
-    // currentWeatherEl.innerHTML = '';
-    // generateApiUrl(element);
     getRecipeSuggestions(element);
-    // getFiveDayForecast(element);
+});
+
+choiceEl.addEventListener('click', function(event){
+  var recipeClick = event.target;
+  console.log(recipeClick);
+  storeRecipeName(recipeClick.innerText);
+  // window.location.href = "recipeGeneration.html";
 });
