@@ -1,9 +1,7 @@
 const beerBtn = $('#beerBtn');
-
-
 const randomBeer = $('.random-beer')
 const displayDescription = $('.description')
-
+var deletionIndex= 0;
 function getBeer(event) {
   // // event.preventDefault();
 
@@ -36,8 +34,36 @@ function getBeer(event) {
     console.log(beerPair3)
     
     showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3)
+    
+    let existingData = JSON.parse(localStorage.getItem('personalStorage')) || [];
+
+    // Generate new item
+    let newBeer = {
+    beerName: beerName,
+    beerDescription: beerDescription,
+    beerIngredients: beerIngredients,
+    volumeValue: volumeValue,
+    volumeUnit: volumeUnit,
+    beerTag: beerTag,
+    beerPair1: beerPair1,
+    beerPair2: beerPair2,
+    beerPair3: beerPair3,
+    };
+    // Append new item to existing data
+    if(existingData.length>9){
+        delete existingData[deletionIndex]
+        existingData.push(newBeer);
+        deletionIndex++;
+        if(deletionIndex==9){
+            deletionIndex=0;
+        }
+    }
+    if(existingData.length<=9){
+    existingData.push(newBeer);
+    }
+    // Save updated data to local storage
+    localStorage.setItem('personalStorage', JSON.stringify(existingData));
   })
-  
 }
 
 // RANDOM BEER 1
