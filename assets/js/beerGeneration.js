@@ -48,6 +48,7 @@ function getBeer(event) {
           const beerName = data[0][0].name;
           console.log(beerName)
           const beerDescription = data[0][0].description;
+          const firstBrewed = data[0][0].first_brewed
           console.log(beerDescription)
           const beerIngredients = data[0][0].ingredients;
           console.log(beerIngredients)
@@ -59,21 +60,16 @@ function getBeer(event) {
           // console.log(beerImg)
           const beerTag = data[0][0].tagline;
           console.log(beerTag)
-          const beerPair1 = data[0][0].food_pairing[0];
-          const beerPair2 = data[0][0].food_pairing[1];
-          const beerPair3 = data[0][0].food_pairing[2];
-          console.log(beerPair1)
-          console.log(beerPair2)
-          console.log(beerPair3)
+
           
-          showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3)
+          showRandomBeer1(beerName, firstBrewed, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag)
   
 
   })
 }
 
 
-function showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3) {
+function showRandomBeer1(beerName, firstBrewed, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag) {
   $("#show-random-beer").empty()
   var cardDiv = $("<div>");
   cardDiv.addClass("card");
@@ -82,6 +78,7 @@ function showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue
     <h3>
     <span>Beer: ${beerName}</span>
     </h3>
+    <span>First brewed: ${firstBrewed}</span>
     <h5>
       <span>${beerTag}</span>
       <ul>
@@ -89,14 +86,6 @@ function showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue
         <li>Volume: ${volumeValue} ${volumeUnit}</li>
       </ul>
       <span>Description: [${beerDescription}]</span>
-    </h5>
-    <h4>Suggested Food Pairings</h4>
-    <h5>
-      <ul>
-        <li>Pair1: ${beerPair1}</li>
-        <li>Pair2: ${beerPair2}</li>
-        <li>Pair3: ${beerPair3}</li>
-      </ul>
     </h5>
   </div>
   `);
