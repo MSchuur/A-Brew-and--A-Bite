@@ -8,11 +8,6 @@
 // }).then(([]))
 
 
-
-
-
-
-
 const beerBtn = $('#beerBtn');
 
 
@@ -22,8 +17,12 @@ const displayDescription = $('.description')
 function getBeer(event) {
   // // event.preventDefault();
 
-    for(var i = 0; i < 3; i++) {
+  const beerApi = "https://api.punkapi.com/v2/beers/random";
 
+  fetch(beerApi)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
 
     const beerName = data[0].name;
     console.log(beerName)
