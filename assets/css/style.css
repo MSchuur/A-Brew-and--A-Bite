@@ -20,3 +20,10 @@ header{
     text-shadow: 3px 3px 3px lightblue; 
 }
 
+.beer-img {
+    height: 400px !important;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
