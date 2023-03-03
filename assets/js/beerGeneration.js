@@ -1,56 +1,49 @@
-
-// const beerApi1 = "https://api.punkapi.com/v2/beers/random";
-// const beerApi2 = "https://api.punkapi.com/v2/beers/random";
-
-// Promise.all([beerApi1, beerApi2])
-// .then(values => {
-//   return Promise.all(values(r => r.json()));
-// }).then(([]))
-
-
 const beerBtn = $('#beerBtn');
-
 
 const randomBeer = $('.random-beer')
 const displayDescription = $('.description')
 
 function getBeer(event) {
-  // // event.preventDefault();
+  // event.preventDefault();
 
-  const beerApi = "https://api.punkapi.com/v2/beers/random";
-
-  fetch(beerApi)
-  .then(res => res.json())
+  const beerRandom1 = fetch('https://api.punkapi.com/v2/beers/random').then(res => res.json());
+  const beerRandom2 = fetch('https://api.punkapi.com/v2/beers/random').then(res => res.json());
+  const beerRandom3 = fetch('https://api.punkapi.com/v2/beers/random').then(res => res.json());
+  
+  Promise.all([beerRandom1, beerRandom2, beerRandom3])
   .then(data => {
     console.log(data);
+    console.log(beerRandom2);
 
-    const beerName = data[0].name;
-    console.log(beerName)
-    const beerDescription = data[0].description;
-    console.log(beerDescription)
-    const beerIngredients = data[0].ingredients;
-    console.log(beerIngredients)
-    const volumeValue = data[0].volume.value;
-    console.log(volumeValue)
-    const volumeUnit = data[0].volume.unit;
-    console.log(volumeUnit)
-    // const beerImg = data[0].image_url;
-    // console.log(beerImg)
-    const beerTag = data[0].tagline;
-    console.log(beerTag)
-    const beerPair1 = data[0].food_pairing[0];
-    const beerPair2 = data[0].food_pairing[1];
-    const beerPair3 = data[0].food_pairing[2];
-    console.log(beerPair1)
-    console.log(beerPair2)
-    console.log(beerPair3)
-    
-    showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3)
+          // RANDOM BEER 1
+          const beerName = data[0][0].name;
+          console.log(beerName)
+          const beerDescription = data[0][0].description;
+          console.log(beerDescription)
+          const beerIngredients = data[0][0].ingredients;
+          console.log(beerIngredients)
+          const volumeValue = data[0][0].volume.value;
+          console.log(volumeValue)
+          const volumeUnit = data[0][0].volume.unit;
+          console.log(volumeUnit)
+          // const beerImg = data[0][0].image_url;
+          // console.log(beerImg)
+          const beerTag = data[0][0].tagline;
+          console.log(beerTag)
+          const beerPair1 = data[0][0].food_pairing[0];
+          const beerPair2 = data[0][0].food_pairing[1];
+          const beerPair3 = data[0][0].food_pairing[2];
+          console.log(beerPair1)
+          console.log(beerPair2)
+          console.log(beerPair3)
+          
+          showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3)
+  
   })
   
 }
 
-// RANDOM BEER 1
+
 function showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3) {
   $("#show-random-beer").empty()
   var cardDiv = $("<div>");
