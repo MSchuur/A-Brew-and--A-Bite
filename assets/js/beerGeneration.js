@@ -1,11 +1,10 @@
-const savedBeers = [];
-
 const beerBtn = $("#beerBtn");
 
 const randomBeer = $(".random-beer");
 const displayDescription = $(".description");
 
-// let deletionIndex= 0; //noah
+const newBeer = [];
+// let deletionIndex= 0;
 // let existingData = JSON.parse(localStorage.getItem('personalStorage')) || [];
 
 function getBeer(event) {
@@ -22,28 +21,19 @@ function getBeer(event) {
   );
 
   Promise.all([beerRandom1, beerRandom2, beerRandom3]).then((data) => {
-    // console.log(data);
-    // console.log(beerRandom2);
 
     const threeBeers = [data[0][0], data[1][0], data[2][0]];
-    // console.log(threeBeers);
 
     $("#show-random-beer").empty();
 
     for (i = 0; i < threeBeers.length; i++) {
       const beerImg = threeBeers[i].image_url || "https://images.punkapi.com/v2/165.png";
-      console.log(beerImg);
       const beerName = threeBeers[i].name;
-      console.log(beerName);
       const beerDescription = threeBeers[i].description;
       const firstBrewed = threeBeers[i].first_brewed;
-      console.log(beerDescription);
       const volumeValue = threeBeers[i].volume.value;
-      console.log(volumeValue);
       const volumeUnit = threeBeers[i].volume.unit;
-      console.log(volumeUnit);
       const beerTag = threeBeers[i].tagline;
-      console.log(beerTag);
 
       showRandomBeer(
         beerImg,
@@ -91,7 +81,6 @@ function showRandomBeer(
     <div class="content">
       ${beerDescription}
       <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
 </div>`);
 
@@ -102,28 +91,19 @@ function showRandomBeer(
   saveBtn.on("click", (event) => {
     $(event.target).removeClass("is-light");
 
-    savedBeers.push({
-      beerImg,
-      beerName,
-      firstBrewed,
-      beerDescription,
-      volumeValue,
-      volumeUnit,
-      beerTag
-    })
 
     // Generate new item
-    let newBeer = {
-      beerImg: beerImg,
-      beerName: beerName,
-      firstBrewed: firstBrewed,
-      beerDescription: beerDescription,
-      volumeValue: volumeValue,
-      volumeUnit: volumeUnit,
-      beerTag: beerTag,
-      };
+    // let newBeer = {
+    //   beerImg: beerImg,
+    //   beerName: beerName,
+    //   firstBrewed: firstBrewed,
+    //   beerDescription: beerDescription,
+    //   volumeValue: volumeValue,
+    //   volumeUnit: volumeUnit,
+    //   beerTag: beerTag,
+    //   };
             
-      // // Append new item to existing data
+      // Append new item to existing data
       // if(newBeer.length>7){
       //     delete newBeer[deletionIndex]
       //     newBeer.push(newBeer);
@@ -135,11 +115,9 @@ function showRandomBeer(
       // if(newBeer.length<=7){
       //   newBeer.push(newBeer);
       // }
-      // // Save updated data to local storage
-      // localStorage.setItem('newBeer', JSON.stringify(newBeer));
     
-
-    localStorage.setItem("savedBeers", JSON.stringify(savedBeers))
+    // Save updated data to local storage
+    // localStorage.setItem("newBeer", JSON.stringify(newBeer))
   })
 
   cardDiv.append(saveBtn)
