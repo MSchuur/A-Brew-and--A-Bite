@@ -1,107 +1,134 @@
-const beerBtn = $('#beerBtn');
+const beerBtn = $("#beerBtn");
 
-const randomBeer = $('.random-beer')
-const displayDescription = $('.description')
-var deletionIndex= 0;
+const randomBeer = $(".random-beer");
+const displayDescription = $(".description");
+
+const newBeer = [];
+// let deletionIndex= 0;
+// let existingData = JSON.parse(localStorage.getItem('personalStorage')) || [];
+
 function getBeer(event) {
   // event.preventDefault();
 
-  const beerRandom1 = fetch('https://api.punkapi.com/v2/beers/random').then(res => res.json());
-  const beerRandom2 = fetch('https://api.punkapi.com/v2/beers/random').then(res => res.json());
-  const beerRandom3 = fetch('https://api.punkapi.com/v2/beers/random').then(res => res.json());
-  
-  Promise.all([beerRandom1, beerRandom2, beerRandom3])
-  .then(data => {
-    console.log(data);
-    console.log(beerRandom2);
+  const beerRandom1 = fetch("https://api.punkapi.com/v2/beers/random").then(
+    (res) => res.json()
+  );
+  const beerRandom2 = fetch("https://api.punkapi.com/v2/beers/random").then(
+    (res) => res.json()
+  );
+  const beerRandom3 = fetch("https://api.punkapi.com/v2/beers/random").then(
+    (res) => res.json()
+  );
 
-    let existingData = JSON.parse(localStorage.getItem('personalStorage')) || [];
+  Promise.all([beerRandom1, beerRandom2, beerRandom3]).then((data) => {
 
-    // Generate new item
-    let newBeer = {
-    beerName: beerName,
-    beerDescription: beerDescription,
-    beerIngredients: beerIngredients,
-    volumeValue: volumeValue,
-    volumeUnit: volumeUnit,
-    beerTag: beerTag,
-    beerPair1: beerPair1,
-    beerPair2: beerPair2,
-    beerPair3: beerPair3,
-    };
-    // Append new item to existing data
-    if(existingData.length>9){
-        delete existingData[deletionIndex]
-        existingData.push(newBeer);
-        deletionIndex++;
-        if(deletionIndex==9){
-            deletionIndex=0;
-        }
+    const threeBeers = [data[0][0], data[1][0], data[2][0]];
+
+    $("#show-random-beer").empty();
+
+    for (i = 0; i < threeBeers.length; i++) {
+      const beerImg = threeBeers[i].image_url || "https://images.punkapi.com/v2/165.png";
+      const beerName = threeBeers[i].name;
+      const beerDescription = threeBeers[i].description;
+      const firstBrewed = threeBeers[i].first_brewed;
+      const volumeValue = threeBeers[i].volume.value;
+      const volumeUnit = threeBeers[i].volume.unit;
+      const beerTag = threeBeers[i].tagline;
+
+      showRandomBeer(
+        beerImg,
+        beerName,
+        firstBrewed,
+        beerDescription,
+        volumeValue,
+        volumeUnit,
+        beerTag
+      );
     }
-    if(existingData.length<=9){
-    existingData.push(newBeer);
-    }
-    // Save updated data to local storage
-    localStorage.setItem('personalStorage', JSON.stringify(existingData));
-
-          // RANDOM BEER 1
-          const beerName = data[0][0].name;
-          console.log(beerName)
-          const beerDescription = data[0][0].description;
-          console.log(beerDescription)
-          const beerIngredients = data[0][0].ingredients;
-          console.log(beerIngredients)
-          const volumeValue = data[0][0].volume.value;
-          console.log(volumeValue)
-          const volumeUnit = data[0][0].volume.unit;
-          console.log(volumeUnit)
-          // const beerImg = data[0][0].image_url;
-          // console.log(beerImg)
-          const beerTag = data[0][0].tagline;
-          console.log(beerTag)
-          const beerPair1 = data[0][0].food_pairing[0];
-          const beerPair2 = data[0][0].food_pairing[1];
-          const beerPair3 = data[0][0].food_pairing[2];
-          console.log(beerPair1)
-          console.log(beerPair2)
-          console.log(beerPair3)
-          
-          showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3)
-  
-
-  })
+  });
 }
 
-
-function showRandomBeer1(beerName, beerDescription, beerIngredients, volumeValue, volumeUnit, beerTag, beerPair1, beerPair2, beerPair3) {
-  $("#show-random-beer").empty()
+function showRandomBeer(
+  beerImg,
+  beerName,
+  firstBrewed,
+  beerDescription,
+  volumeValue,
+  volumeUnit,
+  beerTag
+) {
   var cardDiv = $("<div>");
   cardDiv.addClass("card");
+  cardDiv.addClass("column");
+  cardDiv.addClass("is-one-third");
   cardDiv.html(`
-  <div class="card-body">
-    <h3>
-    <span>Beer: ${beerName}</span>
-    </h3>
-    <h5>
-      <span>${beerTag}</span>
-      <ul>
-        <li>Ingredients: ${beerIngredients} not yet done, coming soon!</li>
-        <li>Volume: ${volumeValue} ${volumeUnit}</li>
-      </ul>
-      <span>Description: [${beerDescription}]</span>
-    </h5>
-    <h4>Suggested Food Pairings</h4>
-    <h5>
-      <ul>
-        <li>Pair1: ${beerPair1}</li>
-        <li>Pair2: ${beerPair2}</li>
-        <li>Pair3: ${beerPair3}</li>
-      </ul>
-    </h5>
+  <div class="card-image">
+    
   </div>
-  `);
+  <div class="card-content">
+    <div class="beer-img" style="background-image: url('${beerImg}')">
+
+    </div>
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Beer: ${beerName}</p>
+        <p class="subtitle is-6">First brewed: ${firstBrewed}</p>
+        <p class="subtitle is-6">Volume: ${volumeValue} ${volumeUnit}</p>
+        <p class="subtitle is-8">"${beerTag}"</p>
+      </div>
+    </div>
+
+    <div class="content">
+      ${beerDescription}
+      <br>
+    </div>
+</div>`);
+
+  const saveBtn = $("<button>");
+  saveBtn.text("Save");
+  saveBtn.addClass("button is-success is-light");
+
+  saveBtn.on("click", (event) => {
+    $(event.target).removeClass("is-light");
+
+
+    // Generate new item
+    // let newBeer = {
+    //   beerImg: beerImg,
+    //   beerName: beerName,
+    //   firstBrewed: firstBrewed,
+    //   beerDescription: beerDescription,
+    //   volumeValue: volumeValue,
+    //   volumeUnit: volumeUnit,
+    //   beerTag: beerTag,
+    //   };
+            
+      // Append new item to existing data
+      // if(newBeer.length>7){
+      //     delete newBeer[deletionIndex]
+      //     newBeer.push(newBeer);
+      //     deletionIndex++;
+      //     if(deletionIndex==7){
+      //       deletionIndex=0;
+      //     }
+      //   }
+      // if(newBeer.length<=7){
+      //   newBeer.push(newBeer);
+      // }
+    
+    // Save updated data to local storage
+    // localStorage.setItem("newBeer", JSON.stringify(newBeer))
+  })
+
+  cardDiv.append(saveBtn)
+
+{/* <figure class="image is-2by5">
+      <img src="${beerImg}" alt="Placeholder image" class="beer-img">
+    </figure> */}
+
+
 
   $("#show-random-beer").append(cardDiv);
 }
 
-beerBtn.on('click', getBeer);
+beerBtn.on("click", getBeer);
