@@ -26,8 +26,8 @@ function renderPairing() {
 // Store the chosen recipe into local storage to be used on the recipe generation page
 
 function storeRecipeName(recipeLabel) {
-  var recipeLabels = JSON.parse(localStorage.getItem('dish')) || [];
-   console.log(recipeLabel);
+  var recipeLabels = JSON.parse(localStorage.getItem('recipe')) || [];
+   
   for (var i = 0; i < recipeLabels.length; i ++ ) {
       if (recipeLabels[i] === recipeLabel) {
           return
@@ -37,7 +37,7 @@ function storeRecipeName(recipeLabel) {
       recipeLabels.shift();
   }
   recipeLabels.push(recipeLabel);
-  localStorage.setItem('dish', JSON.stringify(recipeLabels));
+  localStorage.setItem('recipe', JSON.stringify(recipeLabels));
   
   
   
@@ -84,28 +84,32 @@ function displayRecipe(data) {
     
   var recipeChoiceEl = document.querySelector('#choicesCard');
     var newCard = document.createElement('div');
-    newCard.classList = 'column is-one-third';
+    newCard.classList = 'card column is-one-third newCard';
     recipeChoiceEl.appendChild(newCard);
 
 
     var recipeTitle = document.createElement('p');
     recipeTitle.classList.add('title', 'is-3', 'mb-3');
+    recipeTitle.setAttribute('style', 'text-align: center');
     recipeTitle = data.hits[i].recipe.label;
         
     var recipePhotoUrl = data.hits[i].recipe.image;
     var recipePhoto = document.createElement('img');
     recipePhoto.setAttribute('src', recipePhotoUrl);
     recipePhoto.setAttribute('alt', 'Photo of ' + data.hits[i].recipe.label);
+    recipePhoto.classList.add('card-image', 'image', 'is-fullwidth');
 
     var recipeBtn = document.createElement('button');
-    recipeBtn.classList.add('button', 'is-rounded', 'is-link', 'is-hovered', 'is-focused');
-    recipeBtn.innerText = recipeTitle;
-
+    recipeBtn.classList.add('button', 'is-rounded', 'is-link', 'is-hovered', 'is-focused', 'is-fullwidth');
+    recipeBtn.innerText = 'Click To Show Recipe';
+    recipeBtn.value = data.hits[i]._links.self.href;
 
     newCard.append(recipeTitle);
-    newCard.append(recipePhoto);
     newCard.append(recipeBtn);
-
+    newCard.append(recipePhoto);
+   
+    
+    
   }
     
 }
@@ -121,7 +125,6 @@ pairingListEl.addEventListener('click', function(event) {
 
 choiceEl.addEventListener('click', function(event){
   var recipeClick = event.target;
-  console.log(recipeClick);
-  storeRecipeName(recipeClick.innerText);
+  storeRecipeName(recipeClick.value);
   // window.location.href = "recipeGeneration.html";
 });

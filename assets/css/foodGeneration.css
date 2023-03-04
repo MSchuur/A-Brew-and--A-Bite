@@ -1,8 +1,6 @@
 .foodTitle {
     text-align: center;
     margin: 2rem 0rem;
-    border: 2px solid black;
-
 }
 
 .chosenBeer {
@@ -27,10 +25,20 @@
     text-align: center;
 }
 
-.choiceMenu {
+/* .choiceMenu {
     border: 2px solid black;
+} */
+
+.recipePhoto {
+    margin-left: 50px;
+    /* margin-right: auto; */
     
-    
+}
+
+.newCard {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
 }
 
 #foodGoBack {
