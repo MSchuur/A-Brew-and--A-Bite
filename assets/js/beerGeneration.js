@@ -31,18 +31,21 @@ function getBeer(event) {
       const beerName = threeBeers[i].name;
       const beerDescription = threeBeers[i].description;
       const firstBrewed = threeBeers[i].first_brewed;
-      const volumeValue = threeBeers[i].volume.value;
-      const volumeUnit = threeBeers[i].volume.unit;
       const beerTag = threeBeers[i].tagline;
+      const beerPairing = threeBeers[i].food_pairing[0];
+      const beerPairing2 = threeBeers[i].food_pairing[1];
+      const beerPairing3 = threeBeers[i].food_pairing[2];
+      console.log(beerPairing)
 
       showRandomBeer(
         beerImg,
         beerName,
         firstBrewed,
         beerDescription,
-        volumeValue,
-        volumeUnit,
-        beerTag
+        beerTag,
+        beerPairing,
+        beerPairing2,
+        beerPairing3,
       );
     }
   });
@@ -53,9 +56,10 @@ function showRandomBeer(
   beerName,
   firstBrewed,
   beerDescription,
-  volumeValue,
-  volumeUnit,
-  beerTag
+  beerTag,
+  beerPairing,
+  beerPairing2,
+  beerPairing3,
 ) {
   var cardDiv = $("<div>");
   cardDiv.addClass("card");
@@ -73,8 +77,12 @@ function showRandomBeer(
       <div class="media-content">
         <p class="title is-4">Beer: ${beerName}</p>
         <p class="subtitle is-6">First brewed: ${firstBrewed}</p>
-        <p class="subtitle is-6">Volume: ${volumeValue} ${volumeUnit}</p>
         <p class="subtitle is-8">"${beerTag}"</p>
+        <ul>
+          <li>${beerPairing}</li>
+          <li>${beerPairing2}</li>
+          <li>${beerPairing3}</li>
+        </ul>
       </div>
     </div>
 
