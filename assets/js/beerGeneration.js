@@ -4,8 +4,8 @@ const randomBeer = $(".random-beer");
 const displayDescription = $(".description");
 
 const newBeer = [];
-// let deletionIndex= 0;
-// let existingData = JSON.parse(localStorage.getItem('personalStorage')) || [];
+ let deletionIndex= 0;
+ let existingData = JSON.parse(localStorage.getItem('personalStorage')) || [];
 
 function getBeer(event) {
   // event.preventDefault();
@@ -100,32 +100,26 @@ function showRandomBeer(
     $(event.target).removeClass("is-light");
 
 
-    // Generate new item
-    // let newBeer = {
-    //   beerImg: beerImg,
-    //   beerName: beerName,
-    //   firstBrewed: firstBrewed,
-    //   beerDescription: beerDescription,
-    //   volumeValue: volumeValue,
-    //   volumeUnit: volumeUnit,
-    //   beerTag: beerTag,
-    //   };
+    let newBeer = {
+      beerImg: beerImg,
+      beerName: beerName,
+      beerPairing1: beerPairing ,
+      beerPairing2: beerPairing2,
+      beerPairing3: beerPairing3
+      };
             
-      // Append new item to existing data
-      // if(newBeer.length>7){
-      //     delete newBeer[deletionIndex]
-      //     newBeer.push(newBeer);
-      //     deletionIndex++;
-      //     if(deletionIndex==7){
-      //       deletionIndex=0;
-      //     }
-      //   }
-      // if(newBeer.length<=7){
-      //   newBeer.push(newBeer);
-      // }
+    //Append new item to existing data
+    if(existingData.length>9){
+      delete existingData[deletionIndex]
+      existingData.push(newBeer);
+      deletionIndex++;
+    }
+    else if(existingData.length<=9){
+      existingData.push(newBeer);
+    }
     
     // Save updated data to local storage
-    // localStorage.setItem("newBeer", JSON.stringify(newBeer))
+     localStorage.setItem("personalStorage", JSON.stringify(existingData))
   })
 
   cardDiv.append(saveBtn)
