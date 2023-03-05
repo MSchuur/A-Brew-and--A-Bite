@@ -10,6 +10,7 @@ var apiUrlName = '';
 var choiceEl = document.querySelector('.choiceMenu')
 var goBackBtnEl = document.querySelector('#foodGoBack');
 
+
 // Render the food pairing suggestions from the beer generation page that were stored in local storage
 
 function renderPairing() {
@@ -38,16 +39,7 @@ function storeRecipeName(recipeLabel) {
   }
   recipeLabels.push(recipeLabel);
   localStorage.setItem('recipe', JSON.stringify(recipeLabels));
-  
-  
-  
-  
-  
-  
-  
 }
-
-// Generate and display the 3 top recipe suggestions form the pairing button
 
 function getRecipeSuggestions(choice) {
    
@@ -57,7 +49,6 @@ function getRecipeSuggestions(choice) {
         apiUrlName = apiUrlName + recipeArray[i]+ ',+';
         
     }
-    console.log(apiUrlName);
     var apiUrl = 'https://api.edamam.com/api/recipes/v2/?app_id=86631bdd&app_key='+ key + '&q=' + apiUrlName + '&type=public';
     
     
@@ -65,8 +56,8 @@ function getRecipeSuggestions(choice) {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-        console.log(data);
-        displayRecipe(data);
+        console.log(data)
+          displayRecipe(data);
         });
       } else {
         alert('Error: ' + response.statusText);
@@ -80,17 +71,14 @@ function getRecipeSuggestions(choice) {
 function displayRecipe(data) {
     
   for (var i = 0; i < 3; i++) {
-
     
   var recipeChoiceEl = document.querySelector('#choicesCard');
     var newCard = document.createElement('div');
     newCard.classList = 'card column is-one-third newCard';
     recipeChoiceEl.appendChild(newCard);
 
-
     var recipeTitle = document.createElement('p');
-    recipeTitle.classList.add('title', 'is-3', 'mb-3');
-    recipeTitle.setAttribute('style', 'text-align: center');
+    recipeTitle.classList.add('card-header-title', 'is-3');
     recipeTitle = data.hits[i].recipe.label;
         
     var recipePhotoUrl = data.hits[i].recipe.image;
@@ -102,29 +90,24 @@ function displayRecipe(data) {
     var recipeBtn = document.createElement('button');
     recipeBtn.classList.add('button', 'is-rounded', 'is-link', 'is-hovered', 'is-focused', 'is-fullwidth');
     recipeBtn.innerText = 'Click To Show Recipe';
-    recipeBtn.value = data.hits[i]._links.self.href;
-
+    recipeBtn.value = data.hits[i].recipe.url;
+  
     newCard.append(recipeTitle);
     newCard.append(recipeBtn);
     newCard.append(recipePhoto);
-   
-    
-    
   }
-    
 }
-    
 
 renderPairing(pairings);
 
 pairingListEl.addEventListener('click', function(event) {
-    var element = event.target;
-    element = element.innerHTML;
-    getRecipeSuggestions(element);
-});
+  var element = event.target;
+  element = element.innerHTML;
+  getRecipeSuggestions(element);
+  });
 
 choiceEl.addEventListener('click', function(event){
   var recipeClick = event.target;
-  storeRecipeName(recipeClick.value);
-  // window.location.href = "recipeGeneration.html";
+  console.log(recipeClick.value);
+  window.open(recipeClick.value);
 });
