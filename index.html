@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A Brew & a Bite Just for You!</title>
@@ -10,50 +10,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1a15990cd8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-   </head>
+</head>
 
-  <body>
+<body>
 
-    <header class="section">
-      <div class="container is-fullwidth">
-        <h1 class=" pageTitle title is-1 has-text-centered">
+  <section class="hero is-fullheight bkgrimg">
+ 
+    <header class="hero-head headerBkgrnd">
+      <div class="container">
+        <h1 class=" pageTitle title is-1 has-text-centered has-text-black">
           <i class="fa-solid fa-beer-mug-empty "></i> A Brew  & A Bite <i class="fa-solid fa-burger"></i>
         </h1>
       </div>
     </header>
 
-  <section class="section">
-    <div class="card-image image is-128x128" id="carousel">
-    <div class="card-image image is-128x128">
-        <img src="">
+    <div class="content my-8">
+       <div class="content is-large">
+          <p class="subtitle my-auto has-text-centered has-text-info-dark">
+          <br>
+          <br>
+          <br>
+          <br>
+            The web app which offers you the opportunity to generate a <strong class=" content has-text-white">beer and food pairing</strong>! <br>
+          Select your beer based on your prefered criteria<strong class=" content has-text-danger-dark"> or enter the unknown if you dare </strong> and have a beer randomly generate. <br>
+          All food pairings will be randomly generated based on the beer that generates.
+        </p>
+      </div>
     </div>
+
+  <section class="container carouselForBeer">
+    <div class="card-image image is-128x128" id="carouselFood">
+        <img src="assets/Images/wil-stewart-UErWoQEoMrc-unsplash.jpg">
+        <img src="assets/Images/christin-hume-08tX2fsuSLg-unsplash.jpg">
+        <img src="assets/Images/alexander-kovacs-Q_X0T0E0IyU-unsplash.jpg">
+        <img src="assets/Images/missy-fant-OMIgwm1i_NY-unsplash.jpg">
+        <img src="assets/Images/elevate-snnhGYNqm44-unsplash.jpg">
+        <img src="assets/Images/jon-parry-C8eSYwQkwHw-unsplash.jpg">
+        <img src="assets/Images/lance-anderson-82fcB8ZgdNI-unsplash.jpg">
     </div>
   </section>
 
-  <section class="section">
-    <div class="content is-large">
-        <p class="subtitle has-text-centered">
-        The web app which offers you the opportunity to generate a <strong>beer and food pairing</strong>! <br>
-        Select your beer based on your prefered criteria or enter the unknown if you dare and have a beer randomly generate for you. <br>
-        All food pairings will be randomly generated based on the beer that generates.
-      </p>
+  
+  <section class="container carouselForFood is-flex is-flex-direction-row">
+    <div class="card-image image is-128x128" id="carouselFood">
+        <img src="assets/Images/ryan-concepcion-50KffXbjIOg-unsplash.jpg">
+        <img src="assets/Images/mike-PxJ9zkM2wdA-unsplash.jpg">
+        <img src="assets/Images/giancarlo-revolledo-6jNptYCuiDU-unsplash.jpg">
+        <img src="assets/Images/sam-moghadam-khamseh-LUv656869_A-unsplash.jpg">
+        <img src="assets/Images/melissa-walker-horn-NkwNp3ho-Qw-unsplash.jpg">
+        <img src="assets/Images/olayinka-babalola-r01ZopTiEV8-unsplash.jpg">
+        <img src="assets/Images/nick-fewings-Fo23GV7gEN8-unsplash.jpg">
     </div>
   </section>
 
 
-  <a href="beerGeneration.html" class="button is-large is-rounded is-link is-responsive is-hovered is-fullwidth has-text-black">
+<section class="container" id="buttonPosition">
+  <a href="beerGeneration.html" class="button my-3 is-medium is-rounded is-link is-responsive is-hovered has-text-black">
     <i class="fa-solid fa-beer-mug-empty mr-3 has-text-black"></i> 
-    <span id="buttonFont">Start your Brew & Culinary Adventure Here</span>
+    <p id="buttonFont">Start your Brew & Culinary Adventure Here</p>
     <i class="fa-solid fa-burger ml-3 has-text-black"></i>
   </a>
+</section>
 
-  <footer class="footer">
+
+
+  <footer class="hero-foot my-3" id="footerBkgrnd">
     <div class="content has-text-centered">
       <p>
      Made with <i class="fa-solid fa-brain"></i> power by Noah, Marcel, Richard "Chad" & Amanda!
       
     </div>
   </footer>
+
+</section>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="./assets/js/script.js"></script>
