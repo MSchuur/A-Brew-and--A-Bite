@@ -1,15 +1,9 @@
-
-.bkgrimg {
+body {
     background-image: url("https://images.unsplash.com/photo-1580397581145-cdb6a35b7d3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1330&q=80");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: lighten;
-}
+  }
 
-.headerBkgrnd{
-    background-color: wheat;
-    padding: 5px;
+header{
+    background-color: wheat
 }
 
 .pageTitle {
@@ -17,16 +11,8 @@
     text-shadow: 7px 7px 7px lightblue;
  }
 
-
 #buttonFont {
     font-family: 'Climate Crisis', cursive; 
-
-}
-
-#buttonPosition {
-    position:absolute;
-    bottom: 5%;
-    left: 28%;
 
 }
 
