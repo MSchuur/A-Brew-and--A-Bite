@@ -41,3 +41,18 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+.carouselForBeer {
+    position:absolute;
+    top: 10%;
+    left: 0.5%;
+}
+
+.carouselForFood {
+    position:absolute;
+    top: 10%;
+    right: 0.5%;
+}
+
+#footerBkgrnd {
+    background-color: wheat;
+}
