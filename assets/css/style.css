@@ -8,7 +8,8 @@
 }
 
 .headerBkgrnd{
-    background-color: wheat
+    background-color: wheat;
+    padding: 5px;
 }
 
 .pageTitle {
@@ -25,7 +26,7 @@
 #buttonPosition {
     position:absolute;
     bottom: 5%;
-    left: 25%;
+    left: 28%;
 
 }
 
@@ -35,14 +36,15 @@
 
 .carouselForBeer {
     position:absolute;
-    top: 12%;
-    left: 3%;
+    top: 9.5%;
+    left: 0.5%;
 }
 
 .carouselForFood {
     position:absolute;
-    top: 12%;
-    right: 3%
+    top: 9.5%;
+    right: 0.5%;
+
 }
 
 #footerBkgrnd {
