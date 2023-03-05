@@ -25,7 +25,7 @@ JS Library: https://jquery.com/
 
 Beer Generator API: https://punkapi.com/
 
-Recipe Generator API: https://spoonacular.com/food-api
+Recipe Generator API: https://www.edamam.com/
 
 ## License
 
