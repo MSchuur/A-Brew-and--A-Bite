@@ -34,19 +34,10 @@
     text-shadow: 3px 3px 3px lightblue; 
 }
 
-.carouselForBeer {
-    position:absolute;
-    top: 9.5%;
-    left: 0.5%;
-}
-
-.carouselForFood {
-    position:absolute;
-    top: 9.5%;
-    right: 0.5%;
-
-}
-
-#footerBkgrnd {
-    background-color: wheat;
+.beer-img {
+    height: 400px !important;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
