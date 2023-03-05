@@ -27,6 +27,9 @@ Beer Generator API: https://punkapi.com/
 
 Recipe Generator API: https://www.edamam.com/
 
+Photos Courtesy of: http://unsplash.com/s/photos/
+
+
 ## License
 
 N/A
