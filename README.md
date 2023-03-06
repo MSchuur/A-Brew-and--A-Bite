@@ -12,8 +12,7 @@ Open your favourite web browser and follow the link: 'https://mschuur.github.io/
 ## Screenshot
 
 Screenshot of the webapp pages :
-
-
+![Two film strips with pictures with a beer background and a button to go to random generator](/.assets/Images/ABBLandingPage.jpeg?raw=true "Landing Page")
 
 ## Credits
 
