@@ -1,4 +1,8 @@
-body {
+.nonLoadPage {
+    background-color: whitesmoke;
+}
+
+.bkgrimg {
     background-image: url("https://images.unsplash.com/photo-1580397581145-cdb6a35b7d3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1330&q=80");
   }
 
@@ -14,6 +18,18 @@ header{
 #buttonFont {
     font-family: 'Climate Crisis', cursive; 
 
+}
+
+#enterButtonPosition {
+    position:absolute;
+    top: 80%;
+    left:30%
+}
+
+#beerButtonPosition {
+    position:absolute;
+    top: 35%;
+    left: 40%;
 }
 
 .fa-solid{
