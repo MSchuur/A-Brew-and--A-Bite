@@ -94,7 +94,7 @@ function showRandomBeer(
 
   const saveBtn = $("<button>");
   saveBtn.text("Save");
-  saveBtn.addClass("button is-success is-light");
+  saveBtn.addClass("button is-rounded is-link has-text-black");
 
   saveBtn.on("click", (event) => {
     $(event.target).removeClass("is-light");
