@@ -2,7 +2,7 @@
 
 ## Description
 
-A random generator that provides beer and food pairings selectable to you thatcan be stored until such time as you are ready to enjoy!
+A generator that randomly generate 3 beer choices with food pairings and have has a selection of recipe choices generated from the food selection of your choice. As well as the ability to click on previous Beers selected and get the recommended food pairings to which an alternate selection of food choice can be selected and recipes for said selection generated.
 
 
 ## Installation
