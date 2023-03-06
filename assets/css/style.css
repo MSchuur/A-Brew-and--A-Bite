@@ -42,3 +42,28 @@ header{
 #footerBkgrnd {
     background-color: wheat;
 }
+
+.foodTitle {
+    text-align: center;
+    margin: 2rem 0rem;
+}
+
+.chosenBeerP {
+    text-align: center;
+
+}
+
+.pairingSuggestion {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+#foodGoBack {
+  margin-top: 1rem;
+  position: relative;
+  top: 50%;
+  left:40%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
