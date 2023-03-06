@@ -19,28 +19,29 @@
     </header>
     <section class="container">
         <div class="chosenBeer">
-            <img class="image 128x128 chosenBeerImage" src="./assets/Images/beerBottleForFoodPageHolder.jpg" alt="Beer Bottles as a placeholder till I can import image from the beer generation page">
-            <p class="title is-5 chosenBeerP">This is the beer that you have chosen</p>
+            <p class="title is-5 chosenBeerP">You have chosen</p>
+            <h3 class="title is-3 has-text-centered" id="chosenBeerName"></h3>
             <p class="title is-5 chosenBeerP">If You wish to choose a different beer click the Go Back Button</p>
-            <a class="button is-rounded is-link is-hovered is-focused  goBack-btn" id="foodGoBack" href="beerGeneration.html">Go Back To Beer Choice</a>
-            <a class="button is-rounded is-link is-hovered is-focused  goBack-btn" id="foodGoBack" href="index.html">Go Back Homepage</a>
+            <a class="button is-rounded is-link is-hovered is-focused mt-5 goBack-btn" id="foodGoBack" href="beerGeneration.html">Go Back To Beer Choice</a>
+            <a class="button is-rounded is-link is-hovered is-focused mt-5 goBack-btn" id="foodGoBack" href="index.html">Go Back Homepage</a>
         </div>
     </section>
 
-    <section class="container columns mt-3 " id="suggestedRecipe">
-        <div class="column is-half is-offset-one-third  pairingSuggestion">
+    <section class="container columns" id="suggestedRecipe">
+        <div class="column is-two-fifths is-offset-one-quarter pairingSuggestion">
             <h3 class="mb-4 title is-3">Recommended Pairings
                 <ul id="storedPairing"></ul>
+            </h3>
+        </div>
+        <div class="column is-two-fifths pairingSuggestion">
+            <h3 class="mb-4 title is-3">Last Beers Searched
+                <ul id="storedNamesList"></ul>
             </h3>
         </div>
     </section>
     <section class="container mt-5 mlcolumns  choiceMenu" >
         <div class=" card columns is-two-third" id="choicesCard"></div>      
     </section>    
-            
-
-
-    
     <script src="./assets/js/foodGeneration.js"></script>
 </body>
 </html>

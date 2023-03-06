@@ -78,7 +78,7 @@ function showRandomBeer(
         <p class="title is-4">Beer: ${beerName}</p>
         <p class="subtitle is-6">First brewed: ${firstBrewed}</p>
         <p class="subtitle is-8">"${beerTag}"</p>
-        <ul>
+        <ul>Food Pairings:
           <li>${beerPairing}</li>
           <li>${beerPairing2}</li>
           <li>${beerPairing3}</li>
@@ -101,7 +101,6 @@ function showRandomBeer(
 
 
     let newBeer = {
-      beerImg: beerImg,
       beerName: beerName,
       beerPairing1: beerPairing ,
       beerPairing2: beerPairing2,
@@ -110,7 +109,7 @@ function showRandomBeer(
             
     //Append new item to existing data
     if(existingData.length>9){
-      delete existingData[deletionIndex]
+      existingData.shift();
       existingData.push(newBeer);
       deletionIndex++;
     }
@@ -120,6 +119,7 @@ function showRandomBeer(
     
     // Save updated data to local storage
      localStorage.setItem("personalStorage", JSON.stringify(existingData))
+     window.location.href='foodGeneration.html'
   })
 
   cardDiv.append(saveBtn)
