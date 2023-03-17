@@ -1,7 +1,7 @@
 // Create the global variables that are required for the food generation API
 
-var key = '2929663d6dd7ee94db20d78f5c2a2235';
-var applicationId = '86631bdd';
+var key = '';
+var applicationId = '';
 var pairingListEl = document.querySelector('#storedPairing');
 var genBeerNameEl = document.querySelector('#chosenBeerName');
 var choiceEl = document.querySelector('.choiceMenu');
